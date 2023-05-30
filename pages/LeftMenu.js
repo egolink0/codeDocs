@@ -1,23 +1,9 @@
 import Link from "next/link";
-import { getCurrentDirs } from "./utils";
+import routes from "./routes.json";
+import Menu from "../src/menu";
 
 function LeftMenu({}) {
-  const paths = getCurrentDirs();
-  return (
-    <ul>
-      {paths?.map((item) => (
-        <li key={item.name}>
-          <Link
-            href={{
-              pathname: item.link,
-            }}
-          >
-            <a>{item.name}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+  return <Menu />;
 }
 
 export default LeftMenu;
